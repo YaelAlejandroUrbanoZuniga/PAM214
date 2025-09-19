@@ -30,3 +30,19 @@ let nombres = productos
 
 console.log(nombres);
 
+// ------------------------------------EJERCICIO 3--------------------------------------------
+
+const personas = 
+[
+    {nombre: "Ana", edad: 22},
+    {nombre: "Luis", edad: 35},
+    {nombre: "Maria", edad: 28}
+];
+
+let encontrar = personas.find(personas => personas.nombre === "Luis")
+console.log(encontrar)
+
+personas.forEach(personas => console.log(personas.nombre, personas.edad))
+
+let suma = personas.reduce((acumulador, personas) => {return acumulador + personas.edad}, 0)
+console.log(suma)
