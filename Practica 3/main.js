@@ -14,7 +14,7 @@ function verificarUsuario(usuario)
         if(usuario === "admin")
             resolve("Usuario válido: " + usuario)
         else
-            reject("Usuario inválido" + usuario)
+            reject("Usuario inválido: " + usuario)
     });
 }
 
@@ -45,4 +45,5 @@ async function obtenerDatos()
     let resultado = await simularPeticionAPI();
     console.log(resultado);
 }
+
 obtenerDatos();
