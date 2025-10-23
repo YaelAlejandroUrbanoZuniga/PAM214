@@ -10,6 +10,7 @@ export default function BotonesScreen()
             <Text>
                 Activado
             </Text>
+            
             <Switch
                 onValueChange={(valor) => setIsDisabled(!isDisabled)}
                 value={!isDisabled}
@@ -67,13 +68,15 @@ export default function BotonesScreen()
 
 
 const styles = StyleSheet.create({
-    container: {
+    container: 
+    {
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
     },
-    card: {
+    card: 
+    {
         width: 200,
         height: 250,
         padding: 20,
@@ -82,17 +85,19 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         margin: 15
     },
-    mockImage: {
+    mockImage: 
+    {
         flex: 1,
         backgroundColor: 'gray',
         marginBottom: 8,
         borderRadius: 8
     },
-    shadow: {
+    shadow: 
+    {
         shadowColor: '#000',
         shadowOffset: {width: 0, height: 10},
         shadowOpacity: 0.2,
         shadowRadius: 12,
-        elevation: 10,
-    },
+        elevation: 10,
+    },
 });
