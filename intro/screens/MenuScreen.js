@@ -49,7 +49,7 @@ export default function MenuScreen()
                         <Button color= "#0e620dff" onPress={()=>setScreen('contador')} title='Práctica: Contador'/>
                         <Button color= "#0e620dff" onPress={()=>setScreen('botones')} title='Práctica: Buttons & Switch'/>
                         <Button color= "#0e620dff" onPress={()=>setScreen('texto')} title='Práctica: Text Input & Alert'/>
-                        <Button color= "#0e620dff" onPress={()=>setScreen('imagen')} title='Práctica: ImageBackground & SlapshScreen'/>
+                        <Button color= "#0e620dff" onPress={()=>setScreen('imagen')} title='Práctica: ImageBackground & SplashScreen'/>
                         <Button color= "#0e620dff" onPress={()=>setScreen('scrollview')} title='Práctica: ScrollView'/>
                         <Button color= "#0e620dff" onPress={()=>setScreen('activity')} title='Práctica: ActivityIndicator'/>
                         <Button color= "#0e620dff" onPress={()=>setScreen('flatlist')} title='Práctica: FlatList & Section List'/>
