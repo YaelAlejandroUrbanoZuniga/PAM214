@@ -10,6 +10,7 @@ export default function ImageBackgroundScreen()
         }, 1000);
         return () => clearTimeout(timer);
     },[]);
+    
     if(showSplash)
     {
         return(
@@ -18,6 +19,7 @@ export default function ImageBackgroundScreen()
         </View>
         )
     }
+
     return(
         <SafeAreaView style={{flex: 1}}> 
             <ImageBackground source={{
@@ -63,7 +65,6 @@ const styles = StyleSheet.create(
         borderRadius: 10, 
     },
 
-  
     title: 
     {
         fontSize: 28, 
