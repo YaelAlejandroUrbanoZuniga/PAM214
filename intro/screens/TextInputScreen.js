@@ -9,7 +9,7 @@ export default function TextInputScreen()
 
     const mostrarAlerta =() =>
     {
-        if (nombre.trim() === ' ' || contrasena.trim() === ' ' || contenido.trim === ' ')
+        if (nombre.trim() === '' || contrasena.trim() === '' || contenido.trim() === '')
         {
             Alert.alert('Error. Por favor llena todos los campos.');
             alert('Error. Por favor llena todos los campos.');
