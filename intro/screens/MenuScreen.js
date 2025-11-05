@@ -6,11 +6,12 @@ import ContadorScreen from './ContadorScreen';
 import BotonesScreen from './BotonesScreen';
 import TextInputScreen from './TextInputScreen';
 import ImageBackgroundScreen from './ImageBackgroundScreen';
-import ScrollView from './ScrollView';
+import ScrollView from './ScrollViewScreen';
 import ActivityIndicatorScreen from './ActivityIndicatorScreen';
 import FlatListScreen from './FlatListScreen';
 import Modal from './Modal';
 import BottomSheet from './BottomSheet';
+import Repaso1 from './Repaso1';
 
 
 export default function MenuScreen() 
@@ -28,7 +29,7 @@ export default function MenuScreen()
         case 'imagen':
             return <ImageBackgroundScreen/>
         case 'scrollview':
-            return <ScrollView/>
+            return <ScrollViewScreen/>
         case 'activity':
             return <ActivityIndicatorScreen/>
         case 'flatlist':
@@ -37,6 +38,8 @@ export default function MenuScreen()
             return <Modal/>
         case 'bottom':
             return <BottomSheet/>
+        case 'repaso1':
+            return <Repaso1/>
 
         case 'menu':
             default:
@@ -55,6 +58,7 @@ export default function MenuScreen()
                         <Button color= "#0e620dff" onPress={()=>setScreen('flatlist')} title='Práctica: FlatList & Section List'/>
                         <Button color= "#0e620dff" onPress={()=>setScreen('modal')} title='Práctica: Modal'/>
                         <Button color= "#0e620dff" onPress={()=>setScreen('bottom')} title='Práctica: Bottom Sheet'/>
+                        <Button color= "#0e620dff" onPress={()=>setScreen('repaso1')} title='Práctica: Repaso 1'/>
                         </View>
 
                         <Text style={styles2.textodescripcion}>DESARROLLO DE APLICACIONES</Text>
