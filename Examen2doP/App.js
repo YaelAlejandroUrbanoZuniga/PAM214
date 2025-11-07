@@ -36,9 +36,27 @@ export default function App()
       style={styles.fondoStyle}
       resizeMode='cover'
       >
-        <View style={styles.overlay}>
         <ScrollView
-        showsVerticalScrollIndicator={true}>
+        showsHorizontalScrollIndicator={false}>
+        <View style={styles.overlay}>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
+          <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
           <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
           <Text style={styles.textosStyle}>Estudiante en Ingenieria TIID</Text>
           <Text style={styles.textosStyle}>Tengo 19 años. Nací el 25 de Octubre del 2006.</Text>
@@ -50,8 +68,8 @@ export default function App()
             onPress={mostrarAlerta}
             color= '#289e16ff'
           />
-        </ScrollView>
         </View>
+        </ScrollView>
       </ImageBackground>
     </SafeAreaView>
   )
