@@ -6,12 +6,13 @@ import ContadorScreen from './ContadorScreen';
 import BotonesScreen from './BotonesScreen';
 import TextInputScreen from './TextInputScreen';
 import ImageBackgroundScreen from './ImageBackgroundScreen';
-import ScrollView from './ScrollViewScreen';
+import ScrollViewScreen from './ScrollViewScreen';
 import ActivityIndicatorScreen from './ActivityIndicatorScreen';
 import FlatListScreen from './FlatListScreen';
 import Modal from './Modal';
 import BottomSheet from './BottomSheet';
 import Repaso1 from './Repaso1';
+import Prueba from './prueba';
 
 
 export default function MenuScreen() 
@@ -40,6 +41,8 @@ export default function MenuScreen()
             return <BottomSheet/>
         case 'repaso1':
             return <Repaso1/>
+        case 'prueba':
+            return <Prueba/>
 
         case 'menu':
             default:
@@ -59,6 +62,7 @@ export default function MenuScreen()
                         <Button color= "#0e620dff" onPress={()=>setScreen('modal')} title='Práctica: Modal'/>
                         <Button color= "#0e620dff" onPress={()=>setScreen('bottom')} title='Práctica: Bottom Sheet'/>
                         <Button color= "#0e620dff" onPress={()=>setScreen('repaso1')} title='Práctica: Repaso 1'/>
+                        <Button color= "#0e620dff" onPress={()=>setScreen('prueba')} title='Práctica: prueba'/>
                         </View>
 
                         <Text style={styles2.textodescripcion}>DESARROLLO DE APLICACIONES</Text>
