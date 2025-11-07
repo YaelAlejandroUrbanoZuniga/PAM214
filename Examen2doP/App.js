@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, Button, Alert, SafeAreaView, ImageBackground} from 'react-native';
+import { Text, StyleSheet, View, Button, Alert, SafeAreaView, ImageBackground, ScrollView} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 
@@ -7,7 +7,7 @@ export default function App()
 {
   const mostrarAlerta= ()=>
   {
-    Alert.alert('');
+    alert('Guardar o Cancelar')
   }
 
   const [showSplash, setShowSplash] = useState(true);
@@ -16,7 +16,7 @@ export default function App()
     const timer = setTimeout(()=>
     {
       setShowSplash(false);
-    }, 4000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
   if (showSplash)
@@ -31,44 +31,31 @@ export default function App()
   return (
     <SafeAreaView style={{flex: 1}}>
       <ImageBackground source={{
-        uri:'',
+        uri:'https://laverdadnoticias.com/wp-content/uploads/2025/09/El-nuevo-Yoshi-deslumbra-en-Nintendo-Direct-asi-sera-su-proxima-aventura.jpg',
       }}
       style={styles.fondoStyle}
       resizeMode='cover'
       >
         <View style={styles.overlay}>
+        <ScrollView
+        showsVerticalScrollIndicator={true}>
           <Text style={styles.textosStyle}>Yael Alejandro Urbano Zuñiga</Text>
           <Text style={styles.textosStyle}>Estudiante en Ingenieria TIID</Text>
-          <Text style={styles.textosStyle}>Tengo 19 años. Nací el 25 de Octubre del 2006</Text>
-          <Text style={styles.textosStyle}>Me gusta el gym, los videojuegos y la música</Text>
-          <Text style={styles.textosStyle}>124051558@upq.edu.mx ó yaelzu8@gmail.com</Text>
+          <Text style={styles.textosStyle}>Tengo 19 años. Nací el 25 de Octubre del 2006.</Text>
+          <Text style={styles.textosStyle}>Me gusta el gym, los videojuegos y la música.</Text>
+          <Text style={styles.textosStyle}>124051558@upq.edu.mx - yaelzu8@gmail.com</Text>
           <Text style={styles.textosStyle}>442-553-96-34</Text>
-          <Button 
+          <Button
             title="EDITAR PERFIL"
             onPress={mostrarAlerta}
-            color= '#1c6e0fff'
+            color= '#289e16ff'
           />
+        </ScrollView>
         </View>
       </ImageBackground>
-    </SafeAreaView>  
+    </SafeAreaView>
   )
-
-
-
-
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto"/>
-    </View>
-  );
 }
-
-
-
-
-
-
 
 const styles = StyleSheet.create(
 {
@@ -79,18 +66,22 @@ const styles = StyleSheet.create(
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   showSplashStyle:
   {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#c4edbeff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   textSplashStyle:
   {
     fontSize: 24,
-    color: '#1c6e0fff',
+    color: '#289e16ff',
+    fontWeight: 'bold',
   },
+
   fondoStyle:
   {
     flex: 1,
@@ -111,6 +102,6 @@ const styles = StyleSheet.create(
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 20,
-    textAlign: 'center',
+    textAlign: 'justify',
   }
 });
