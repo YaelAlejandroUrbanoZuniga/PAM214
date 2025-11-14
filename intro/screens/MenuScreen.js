@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, Button } from 'react-native';
+import { Text, StyleSheet, View, Button, SafeAreaView, SafeAreaViewBase } from 'react-native';
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 
@@ -9,8 +9,8 @@ import ImageBackgroundScreen from './ImageBackgroundScreen';
 import ScrollViewScreen from './ScrollViewScreen';
 import ActivityIndicatorScreen from './ActivityIndicatorScreen';
 import FlatListScreen from './FlatListScreen';
-import Modal from './Modal';
-import BottomSheet from './BottomSheet';
+import ModalScreen from './ModalScreen';
+import BottomSheetScreen from './BottomSheetScreen';
 import Repaso1 from './Repaso1';
 import Prueba from './prueba';
 
@@ -36,9 +36,9 @@ export default function MenuScreen()
         case 'flatlist':
             return <FlatListScreen/>
         case 'modal':
-            return <Modal/>
+            return <ModalScreen/>
         case 'bottom':
-            return <BottomSheet/>
+            return <BottomSheetScreen/>
         case 'repaso1':
             return <Repaso1/>
         case 'prueba':
@@ -47,7 +47,7 @@ export default function MenuScreen()
         case 'menu':
             default:
                 return(
-                    <View style={styles2.estiloprincipal}>
+                    <SafeAreaView style={styles2.estiloprincipal}>
                         <Text style={styles2.textodescripcion}>UNIVERSIDAD POLITÉCNICA DE QUERÉTARO</Text>
                         <Text style={styles2.textomenu}>MENÚ DE PRÁCTICAS</Text>
 
@@ -69,7 +69,7 @@ export default function MenuScreen()
                         <Text style={styles2.textodescripcion2}>Guerra Lopez Ivan Isay</Text>
                         <Text style={styles2.textodescripcion}>TIID - 214</Text>
                         <Text style={styles2.textodescripcion2}>Urbsno Zuñiga Yael Alejandro</Text>
-                    </View>
+                    </SafeAreaView>
                 ) 
                 
     }

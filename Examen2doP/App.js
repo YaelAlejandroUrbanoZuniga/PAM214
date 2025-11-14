@@ -120,6 +120,6 @@ const styles = StyleSheet.create(
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 20,
-    textAlign: 'justify',
+    textAlign: 'c',
   }
 });

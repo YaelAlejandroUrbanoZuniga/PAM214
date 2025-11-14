@@ -15,7 +15,7 @@ export default function ScrollViewScreen()
         setRefreshing(true);
         setTimeout(() => 
         {
-            setRefreshing(false);
+        setRefreshing(false);
         }, 2000); 
     };
 

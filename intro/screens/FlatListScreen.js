@@ -31,6 +31,7 @@ export default function FlatListScreen()
             <Text style={styles.titulo}>
                 FlatList
             </Text>
+
             <FlatList
                 data={estudiantes}
                 KeyExtractor={(item) => item.id}
@@ -45,8 +46,10 @@ export default function FlatListScreen()
                 )}>
                 </FlatList>
 
-                <Text style={styles.titulo}>SectionList</Text>
 
+
+                <Text style={styles.titulo}>SectionList</Text>
+                
                 <SectionList
                     sections={materias}
                     keyExtractor={(item, index) => item + index}

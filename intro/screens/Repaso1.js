@@ -28,7 +28,7 @@ export default function Repaso1()
         {
             Alert.alert('Debes aceptar los términos y condiciones.');
             alert('Debes aceptar los términos y condiciones.');
-        
+            
         } else
         {
             Alert.alert(`Hola, ${nombre}. Tu correo es: ${correo}.`);
