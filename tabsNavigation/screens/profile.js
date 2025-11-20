@@ -1,7 +1,7 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Pressable} from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-export default function Profile()
+export default function Profile({navigation})
 {
     return (
         <View style = {styles.container}>
@@ -9,6 +9,10 @@ export default function Profile()
                 <Ionicons name = "person-outline" size = {28} color = "green"/>
                 <Text style = {styles.title}>PERFIL DE USUARIO</Text>
             </View>
+
+             <Pressable style={[styles.button, styles.buttonSettings]} onPress={() => navigation.navigate('Details')}>
+                <Text style={styles.buttonText}>IR A DETALLES</Text>
+            </Pressable>
         </View>
     );
 }
@@ -36,5 +40,27 @@ const styles = StyleSheet.create(
         fontWeight: 'bold',
         marginLeft: 10,
         color: 'green',
+    },
+
+    button: 
+    {
+        paddingVertical: 12,
+        paddingHorizontal: 30,
+        borderRadius: 8,
+        marginBottom: 20,
+        width: '80%',
+        alignItems: 'center',
+    },
+
+    buttonSettings: 
+    {
+        backgroundColor: '#FF8800',
+    },
+ 
+    buttonText: 
+    {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: '600',
     },
 });
