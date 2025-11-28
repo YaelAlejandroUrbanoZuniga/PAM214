@@ -14,15 +14,14 @@ class DatabaseService {
             console.log('Usando SQLite para móvil');
             this.db = await SQLite.openDatabaseAsync('miapp.db');
             await this.db.execAsync(`
-    CREATE TABLE IF NOT EXISTS usuarios (
+      CREATE TABLE IF NOT EXISTS usuarios (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nombre TEXT NOT NULL,
         fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP
-        );
+      );
     `);
         }
     }
-
     async getAll() {
         if (Platform.OS === 'web') {
             const data = localStorage.getItem(this.storageKey);
@@ -38,7 +37,7 @@ class DatabaseService {
             const nuevoUsuario = {
                 id: Date.now(),
                 nombre,
-                fecha_creacion: new Date().toISOString(),
+                fecha_creacion: new Date().toISOString()
             };
 
             usuarios.unshift(nuevoUsuario);
@@ -52,36 +51,41 @@ class DatabaseService {
             return {
                 id: result.lastInsertRowId,
                 nombre,
-                fecha_creacion: new Date().toISOString(),
+                fecha_creacion: new Date().toISOString()
             };
         }
     }
-
-    async add(nombre) {
+    async update(id, nuevoNombre) {
         if (Platform.OS === 'web') {
             const usuarios = await this.getAll();
-
-            const nuevoUsuario = {
-                id: Date.now(),
-                nombre,
-                fecha_creacion: new Date().toISOString(),
-            };
-
-            usuarios.unshift(nuevoUsuario);
-            localStorage.setItem(this.storageKey, JSON.stringify(usuarios));
-            return nuevoUsuario;
+            const index = usuarios.findIndex(u => u.id === id);
+            if (index !== -1) {
+                usuarios[index].nombre = nuevoNombre;
+                localStorage.setItem(this.storageKey, JSON.stringify(usuarios));
+                return usuarios[index];
+            }
+            throw new Error('Usuario no encontrado');
         } else {
-            const result = await this.db.runAsync(
-                'INSERT INTO usuarios(nombre) VALUES(?)',
-                nombre
+            await this.db.runAsync(
+                'UPDATE usuarios SET nombre = ? WHERE id = ?',
+                nuevoNombre,
+                id
             );
-            return {
-                id: result.lastInsertRowId,
-                nombre,
-                fecha_creacion: new Date().toISOString(),
-            };
+            return { id, nombre: nuevoNombre };
+        }
+    }
+
+    async remove(id) {
+        if (Platform.OS === 'web') {
+            const usuarios = await this.getAll();
+            const nuevos = usuarios.filter(u => u.id !== id);
+            localStorage.setItem(this.storageKey, JSON.stringify(nuevos));
+            return true;
+        } else {
+            await this.db.runAsync('DELETE FROM usuarios WHERE id = ?', id);
+            return true;
         }
     }
 }
-// Exportar instancia de la clase
+
 export default new DatabaseService();

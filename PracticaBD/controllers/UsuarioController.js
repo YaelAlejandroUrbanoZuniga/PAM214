@@ -1,4 +1,4 @@
-import { Usuario } from '../models/usuario';
+import { Usuario } from '../models/usuario'
 import DatabaseService from '../database/DataBaseService';
 
 export class UsuarioController {
@@ -6,7 +6,6 @@ export class UsuarioController {
         this.listeners = [];
     }
 
-    // Inicializar el controlador con el Service
     async initialize() {
         await DatabaseService.initialize();
     }
@@ -20,19 +19,14 @@ export class UsuarioController {
             throw new Error('No se pudieron cargar los usuarios');
         }
     }
-
     async crearUsuario(nombre) {
         try {
-            // 1. Validar datos
             Usuario.validar(nombre);
 
-            // 2. Insertar en BD
             const nuevoUsuario = await DatabaseService.add(nombre.trim());
 
-            // 3. Notificar a los observadores
             this.notifyListeners();
 
-            // 4. Retornar usuario creado
             return new Usuario(
                 nuevoUsuario.id,
                 nuevoUsuario.nombre,
@@ -43,8 +37,6 @@ export class UsuarioController {
             throw error;
         }
     }
-
-    // Sistema de observadores para actualizar la vista automáticamente
     addListener(callback) {
         this.listeners.push(callback);
     }
@@ -56,6 +48,25 @@ export class UsuarioController {
     notifyListeners() {
         this.listeners.forEach(callback => callback());
     }
+    async actualizarUsuario(id, nuevoNombre) {
+        try {
+            Usuario.validar(nuevoNombre);
+            const actualizado = await DatabaseService.update(id, nuevoNombre.trim());
+            this.notifyListeners();
+            return actualizado;
+        } catch (error) {
+            console.error('Error al actualizar usuario:', error);
+            throw error;
+        }
+    }
 
-
+    async eliminarUsuario(id) {
+        try {
+            await DatabaseService.remove(id);
+            this.notifyListeners();
+        } catch (error) {
+            console.error('Error al eliminar usuario:', error);
+            throw error;
+        }
+    }
 }
